@@ -1,0 +1,568 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+ */
+.Container {
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  margin: 0px;
+  padding: 0px;
+}
+
+.LoaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 700px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: #fff;
+  z-index: 10000;
+}
+.loader {
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid green;
+  width: 50px;
+  height: 50px;
+}
+
+.SomethingWentWrongText {
+  color: #ff6200;
+}
+
+/*  from here header section start */
+.Nav {
+  background-color: #fafbfc;
+  border-bottom: 2px solid #e1e4e8;
+  width: 100%;
+  -webkit-transition: height 0.2s ease-in-out;
+  transition: height 0.2s ease-in-out;
+  height: 89px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.Navmenusfirst {
+  display: flex;
+  flex-direction: row;
+  width: 88%;
+  margin: 0 auto;
+  padding-top: 10px;
+  justify-content: space-between;
+}
+
+.NavmenusSecond {
+  display: flex;
+  flex-direction: row;
+  width: 88%;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+.PathDivider {
+  margin: 0 0.25em;
+}
+
+.CommonSVGStyle {
+  color: rgba(67, 111, 155, 0.3);
+  fill: currentColor;
+  padding-right: 5px;
+  position: relative;
+  top: 2px;
+  display: inline-block;
+}
+
+/* Anchor = styled.a` */
+/* color: ${props => props.color};
+  text-decoration: none;
+  font-size : 18px;
+  font-weight : ${props => (props.fontWeight
+    ? props.fontWeight : 'none')}
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: purple; 
+  }
+`; */
+.Anchor {
+  text-decoration: none;
+  font-size: 18px;
+
+  /*  */
+  /* font-weight : ${props => (props.fontWeight
+    ? props.fontWeight : 'none')} */
+}
+.Anchor :active {
+  color: purple;
+}
+
+.PathDivider {
+  margin: 0 0.25em;
+}
+.RepoDetailContainer {
+  display: inline-block;
+  margin: 5px;
+  font-size: 12px;
+  border-collapse: collapse;
+}
+.IssueListingContainer {
+  font-size: 14px;
+  width: 88%;
+  margin: 0 auto;
+}
+.RepoDetailTagContainer {
+  border: 1px solid #cdcfd1;
+  border-width: 1px 0px 1px 1px;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 2px 0px 0px 2px;
+  background-color: #f4f7f9;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.RepoDetailTagContainer :hover {
+  background-color: #e7eaed;
+}
+.Caret {
+  padding: 0px 5px;
+}
+.Caret:after {
+  border: 4px solid transparent;
+  border-top-color: currentcolor;
+  content: "";
+  display: inline-block;
+  height: 0;
+  vertical-align: -2px;
+  width: 0;
+}
+
+.NavigationItemValue {
+  background-color: rgba(27, 31, 35, 0.08);
+  border-radius: 20px;
+  color: #000;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 2px 5px;
+  margin-left: 2px;
+}
+
+/* const NavigationItemWrapper = styled.div`
+  border: 1px solid transparent;
+  border-radius: 3px 3px 0 0;
+  border-top: 3px solid transparent;
+  color: ${(props) => (props.selected ? "#24292e" : "#586069")};
+  float: left;
+  padding: 7px 15px 8px;
+  white-space: nowrap;
+  background-color: ${(props) => props.selected && "#fff"};
+  border-color: ${(props) => props.selected && "#e36209 #e1e4e8 transparent"};
+ 
+  &:hover {
+    color: #000;
+  }
+`; */
+.NavigationItemWrapper {
+  border: 1px solid transparent;
+  border-radius: 3px 3px 0 0;
+  border-top: 3px solid transparent;
+  float: left;
+  padding: 7px 15px 8px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.NavigationItemWrapper:hover {
+  color: #000;
+}
+.NavigationItemAnchor {
+  text-decoration: none;
+  color: #586069;
+}
+
+.RepoDetailValueContainer {
+  border: 1px solid #cdcfd1;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 0px 2px 2px 0px;
+  line-height: 20px;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  /* padding-top: 15px; */
+
+  .RepoTitleInfo {
+    padding-top: 15px;
+  }
+}
+
+@media (max-width: 820px) {
+  .RightNav {
+    display: none;
+  }
+}
+
+/* /* -----------------------------SUBNAV-- */
+
+.SubNavContainer {
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media (max-width: 820px) {
+  .SubNavContainer {
+    flex-direction: column;
+  }
+  .FilterNSearchContainer {
+    flex-direction: column;
+  }
+  .SearchContainer {
+    margin-top: 10px;
+  }
+  .DetailContainer {
+    margin: 10px 0px;
+  }
+}
+.DetailContainer {
+  display: inline-block;
+  margin: 5px 5px;
+  font-size: 12px;
+  border-collapse: collapse;
+}
+.DetailTagContainer {
+  border: 1px solid #cdcfd1;
+  border-width: 1px 0px 1px 1px;
+  text-decoration: none;
+  line-height: 20px;
+  border-radius: 2px 0px 0px 2px;
+
+  /* padding: ${prop => prop.padding};
+     background-color : ${prop => prop.backgroundColor}; */
+  cursor: pointer;
+  font-weight: bold;
+  color: #586069;
+}
+.DetailTagContainer:hover {
+  /* background-color : ${prop => prop.backgroundColor} */
+}
+.FiltersContainer {
+  border: 1px solid rgba(27, 31, 35, 0.2);
+  border-radius: 0.25em;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 12px;
+  position: relative;
+  vertical-align: middle;
+  white-space: nowrap;
+  background-color: #eff3f6;
+  background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  color: #444d56;
+}
+.SearchContainer {
+  display: inline-block;
+  position: relative;
+}
+
+.Caret {
+  padding: 0px 5px;
+}
+.Caret:after {
+  border: 4px solid transparent;
+  border-top-color: currentcolor;
+  content: "";
+  display: inline-block;
+  height: 0;
+  vertical-align: -2px;
+  width: 0;
+}
+.FilterNSearchContainer {
+  display: flex;
+  align-items: baseline;
+}
+.CreateNewIssueButton {
+  background-color: #28a745;
+  background-image: linear-gradient(-180deg, #34d058, #28a745 90%);
+  color: #fff;
+  text-decoration: none;
+  background-position: -1px -1px;
+  background-repeat: repeat-x;
+  background-size: 110% 110%;
+  border: 1px solid rgba(27, 31, 35, 0.2);
+  border-radius: 0.25em;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 12px;
+  position: relative;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.CreateNewIssueButton:hover {
+  background-color: #269f42;
+  background-image: linear-gradient(-180deg, #2fcb53, #269f42 90%);
+  background-position: -0.5em;
+  border-color: rgba(27, 31, 35, 0.5);
+  background-repeat: repeat-x;
+  text-decoration: none;
+  outline-width: 0;
+}
+.INPUT {
+  text-rendering: auto;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  cursor: text;
+  background-position: right 8px center;
+  background-repeat: no-repeat;
+  border: 1px solid #d1d5da;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075);
+  color: #24292e;
+  line-height: 20px;
+  min-height: 20px;
+  outline: none;
+  padding: 6px 8px;
+  vertical-align: middle;
+  font-size: 14px;
+  background-color: #fafbfc;
+  color: #586069;
+  padding-left: 30px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+INPUT :focus {
+  background-color: #fff;
+  border-color: #2188ff;
+  box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075),
+    0 0 0 0.2em rgba(3, 102, 214, 0.3);
+  outline: none;
+}
+
+.DetailValueContainer {
+  border: 1px solid #cdcfd1;
+  /* padding: ${prop => prop.padding}; */
+  border-radius: 0px 2px 2px 0px;
+  line-height: 20px;
+  text-decoration: none;
+  color: #586069;
+  font-weight: bold;
+  cursor: pointer;
+  /* background-color : ${prop => prop.backgroundColor}; */
+}
+
+/* issueTable___--------------- */
+.IssuesTableWraper {
+  margin-bottom: 20px;
+}
+.IssuesTableHeaderContainer {
+  background-color: #f6f8fa;
+  border: 1px solid #e1e4e8;
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  cursor: ponter;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.OtherDetails {
+  display: flex;
+  flex-direction: row;
+}
+.OpenClosedIssueDetails {
+  padding-left: 16px;
+}
+.Caret {
+  padding: 0px 5px;
+}
+.Caret::after {
+  border: 4px solid transparent;
+  border-top-color: currentcolor;
+  content: "";
+  display: inline-block;
+  height: 0;
+  vertical-align: -2px;
+  width: 0;
+}
+.DetailSpan {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #586069;
+}
+.DetailSpan :hover {
+  color: #24292e;
+}
+
+.OpenClosedIssueAnchor {
+  border: 1px solid transparent;
+  border-radius: 3px 3px 0 0;
+  border-top: 3px solid transparent;
+  float: left;
+  /* font-weight : ${(props) => (props.selected ? "bold" : "none")} */
+  padding: 13px 0px;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  /* color : ${(props) => (props.selected ? "#24292e" : "#586069")}; */
+}
+.OpenClosedIssueAnchor:hover {
+  color: #24292e;
+}
+
+@media (max-width: 820px) {
+  .IssuesTableHeaderContainer {
+    flex-direction: column;
+  }
+  .OtherDetails {
+    flex-direction: column;
+  }
+}
+
+/*  for issed table----------------------------------  */
+
+.IssueWrapper {
+  border: 1px solid #e1e4e8;
+  background-color: #fff;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.IssueWrapper :hover {
+  background-color: #f6f8fa;
+}
+
+.IssueAnchor {
+  font-weight: 550;
+  color: #24292e;
+  display: inline-block;
+  font-size: 16px;
+  padding-left: 4px;
+  word-break: break-word;
+  text-decoration: none;
+}
+
+.UserAnchor {
+  text-decoration: none;
+  color: #586069;
+}
+.UserAnchor :hover {
+  color: #0366d6;
+}
+.IssueOpenedBy {
+  font-size: 12px;
+  color: #586069;
+  line-height: 1.25;
+  margin-top: 5px;
+  margin-left: 42px;
+  padding-bottom: 8px;
+}
+.Label {
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: inset 0 -1px 0 rgba(27, 31, 35, 0.12);
+  font-size: 12px;
+  font-weight: 600;
+  height: 20px;
+  line-height: 15px;
+  padding: 0.15em 4px;
+  margin-left: 2px;
+}
+.IssueAnchor :hover {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.LabelsWrapper:hover {
+  color: #24292e;
+}
+.IssueAnchorNTitleWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  padding-top: 2px;
+}
+
+.IssueOpenedIconWrapper {
+  padding: 8px 0px 0px 16px;
+  display: inline-block;
+}
+
+.IssueAnchorWithLabel {
+  width: 75%;
+}
+
+.IssuesContainerWrapper {
+  border: 1px solid #e1e4e8;
+  border-collapse: collapse;
+}
